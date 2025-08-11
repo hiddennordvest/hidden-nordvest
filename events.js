@@ -1,398 +1,93 @@
 // events.js
 
+// Sample event data
 const events = [
   {
-    title: "6km heat run with 7daysactive and Rondo - Heat Harmony",
-    date: "2025-08-01",
-    time: "07:00",
-    location: "Heat Harmony",
-    category: "fitness",
-    description: "Morning 6km run with 7daysactive and Rondo."
+    id: 1,
+    title: "Morning Yoga",
+    date: "2025-08-08",
+    time: "08:00 - 09:00",
+    location: "Nordvest Studio",
+    category: "wellness",
+    description: "Start your day relaxed with a refreshing yoga session."
   },
   {
-    title: "Nova Sense opening",
-    date: "2025-08-01",
-    time: "12:00 to 16:00",
-    location: "Nova Sense",
-    category: "opening",
-    description: "Grand opening event at Nova Sense."
-  },
-  {
-    title: "Sensommerbreve",
-    date: "2025-08-01",
-    time: "13:00",
-    location: "Cafe Lunden",
-    category: "culture",
-    description: "Sensommerbreve event at Cafe Lunden."
-  },
-  {
-    title: "Fry-Day",
-    date: "2025-08-01",
-    time: "16:30 until sold out",
-    location: "Flere Fugle",
-    category: "food",
-    description: "Fry-Day event at Flere Fugle."
-  },
-  {
-    title: "Albert Preisler - Jazz Trio",
-    date: "2025-08-01",
-    time: "18:00",
-    location: "Cafe Lunden",
+    id: 2,
+    title: "Jazz Night",
+    date: "2025-08-09",
+    time: "20:00 - 23:00",
+    location: "Nordvest Jazz Bar",
     category: "music",
-    description: "Jazz Trio performance by Albert Preisler."
+    description: "Live jazz music from local artists."
   },
   {
-    title: "Primal Play",
-    date: "2025-08-01",
-    time: "19:30 to 21:30",
-    location: "Rört",
-    category: "wellness",
-    description: "Primal Play session."
+    id: 3,
+    title: "Pop-up Market",
+    date: "2025-08-10",
+    time: "10:00 - 16:00",
+    location: "Nordvest Square",
+    category: "markets",
+    description: "Find unique handmade crafts and vintage items."
   },
   {
-    title: "Knitting & Listening",
-    date: "2025-08-02",
-    time: "09:30 to 12:00",
-    location: "Tagensbo Kirke",
-    category: "craft",
-    description: "Knitting and listening event."
-  },
-  {
-    title: "Yoga with Petra & Strik",
-    date: "2025-08-02",
-    time: "10:00",
-    location: "Cafe Lunden",
-    category: "wellness",
-    description: "Yoga session with Petra & Strik."
-  },
-  {
-    title: "Happy Hours",
-    date: "2025-08-02",
-    time: "12:00 to 16:00",
-    location: "Gamma NV",
-    category: "social",
-    description: "Happy Hours event."
-  },
-  {
-    title: "Livskompasset Panel-Talk",
-    date: "2025-08-02",
-    time: "16:00",
-    location: "Cafe Lunden",
-    category: "talk",
-    description: "Panel talk at Cafe Lunden."
-  },
-  {
-    title: "Autopoul Sunday Market",
-    date: "2025-08-03",
-    time: "10:00 to 15:00",
-    location: "Autopoul",
-    category: "market",
-    description: "Sunday market at Autopoul."
-  },
-  {
-    title: "Københavnstrup Flea Market",
-    date: "2025-08-03",
-    time: "10:00 to 16:00",
-    location: "Københavnstrup",
-    category: "market",
-    description: "Flea market in Københavnstrup."
-  },
-  {
-    title: "Neighbor Sunday",
-    date: "2025-08-03",
-    time: "12:00 to 15:00",
-    location: "Maker Space NV",
-    category: "community",
-    description: "Community gathering at Maker Space NV."
-  },
-  {
-    title: "Pico Pizza Sunday Market",
-    date: "2025-08-03",
-    time: "12:00 to 16:00",
-    location: "Pico Pizza",
-    category: "food",
-    description: "Sunday market with Spritz and Beer 2 for 1."
-  },
-  {
-    title: "Worksharing: Surfacing HypoKrisia",
-    date: "2025-08-03",
-    time: "14:00 to 16:00",
-    location: "Thoravej 29",
+    id: 4,
+    title: "Art Workshop",
+    date: "2025-08-11",
+    time: "14:00 - 17:00",
+    location: "Creative Hub",
     category: "workshop",
-    description: "Worksharing session on Surfacing HypoKrisia."
-  },
-  {
-    title: "Tigeroak Duo Set",
-    date: "2025-08-03",
-    time: "14:30",
-    location: "Cafe Lunden",
-    category: "music",
-    description: "Duo performance at Cafe Lunden."
-  },
-  {
-    title: "Mini Urban Retreat",
-    date: "2025-08-04",
-    time: "09:00 to 14:00",
-    location: "Bispebjergvej 73",
-    category: "wellness",
-    description: "Mini urban retreat event."
-  },
-  {
-    title: "Udendørs Madklub",
-    date: "2025-08-04",
-    time: "16:30 to 20:00",
-    location: "Ebba Lunds Vej 41D",
-    category: "food",
-    description: "Outdoor dining club."
-  },
-  {
-    title: "Mini Urban Retreat",
-    date: "2025-08-05",
-    time: "09:00 to 14:00",
-    location: "Bispebjergvej 73",
-    category: "wellness",
-    description: "Mini urban retreat event."
-  },
-  {
-    title: "Literature in Green",
-    date: "2025-08-05",
-    time: "13:00 to 14:00",
-    location: "Ebba Lunds Vej 41D",
-    category: "literature",
-    description: "Literature event in a green setting."
-  },
-  {
-    title: "Rose Tuesday",
-    date: "2025-08-05",
-    time: "All day",
-    location: "Autopoul",
-    category: "celebration",
-    description: "Rose Tuesday celebration."
-  },
-  {
-    title: "Pils & Pizza",
-    date: "2025-08-05",
-    time: "From 16:30",
-    location: "Flere Fugle",
-    category: "food",
-    description: "Pilsner and pizza evening."
-  },
-  {
-    title: "Repair Cafe",
-    date: "2025-08-05",
-    time: "17:00 to 20:00",
-    location: "Maker Space NV",
-    category: "community",
-    description: "Community repair cafe."
-  },
-  {
-    title: "The Heart of Zen with Genpo Roshi",
-    date: "2025-08-05",
-    time: "18:00 to 21:00",
-    location: "Rört",
-    category: "wellness",
-    description: "Zen meditation session."
-  },
-  {
-    title: "Pub Quiz",
-    date: "2025-08-05",
-    time: "19:00",
-    location: "Nordvest Ølbar",
-    category: "social",
-    description: "Pub quiz night."
-  },
-  {
-    title: "Bingo Night",
-    date: "2025-08-05",
-    time: "19:00",
-    location: "Gamma NV",
-    category: "social",
-    description: "Bingo night event."
-  },
-  {
-    title: "Litteratur, samtale, bøger og seniorer",
-    date: "2025-08-06",
-    time: "16:00 to 17:30",
-    location: "Rentemestervej Bibliotek",
-    category: "literature",
-    description: "Literature, conversation, books and seniors."
-  },
-  {
-    title: "Clairvoyance Aften",
-    date: "2025-08-06",
-    time: "18:30 to 20:00",
-    location: "Kimia Healing Space",
-    category: "spiritual",
-    description: "Evening clairvoyance session."
-  },
-  {
-    title: "Liitcafe Litterær Aften",
-    date: "2025-08-06",
-    time: "TBD",
-    location: "Cafe Lunden",
-    category: "literature",
-    description: "Literary evening at Cafe Lunden."
-  },
-  {
-    title: "Morning Yoga with @sarah_zoe",
-    date: "2025-08-07",
-    time: "11:00 to 12:15",
-    location: "Autopoul",
-    category: "wellness",
-    description: "Morning yoga session."
-  },
-  {
-    title: "Worksharing: Stepping In | Stepping Out",
-    date: "2025-08-07",
-    time: "15:00 to 17:00",
-    location: "Thoravej 29",
-    category: "workshop",
-    description: "Worksharing session."
-  },
-  {
-    title: "Happy Hour - 2 for 1 cocktail",
-    date: "2025-08-07",
-    time: "15:00 to 01:00",
-    location: "Pool Pub",
-    category: "social",
-    description: "Cocktail happy hour."
-  },
-  {
-    title: "Ulvekoret",
-    date: "2025-08-07",
-    time: "16:15",
-    location: "Tagensbo Kirke",
-    category: "music",
-    description: "Ulvekoret performance."
-  },
-  {
-    title: "Samba de Malandro Workshop",
-    date: "2025-08-07",
-    time: "19:00 to 20:30",
-    location: "Tagensbo Skole",
-    category: "workshop",
-    description: "Samba dance workshop."
-  },
-  {
-    title: "Speeddating queer/pre-pride edition for alle",
-    date: "2025-08-07",
-    time: "20:00",
-    location: "Dorthea’s Bar",
-    category: "social",
-    description: "Speed dating queer/pre-pride edition."
-  },
-  {
-    title: "Recycle Fashion Showcase",
-    date: "2025-08-07",
-    time: "TBD",
-    location: "Cafe Lunden",
-    category: "fashion",
-    description: "Fashion showcase event."
-  },
-  {
-    title: "Slow Fashion Talk - Mode101",
-    date: "2025-08-07",
-    time: "TBD",
-    location: "Cafe Lunden",
-    category: "talk",
-    description: "Talk on slow fashion."
-  },
-  {
-    title: "6km heat run with 7daysactive and Rondo - Heat Harmony",
-    date: "2025-08-08",
-    time: "07:00",
-    location: "Heat Harmony",
-    category: "fitness",
-    description: "Morning 6km run with 7daysactive and Rondo."
-  },
-  {
-    title: "Vernissage with Camilla Troelsø",
-    date: "2025-08-08",
-    time: "16:00 to 18:00",
-    location: "Bevar’s",
-    category: "art",
-    description: "Art vernissage with Camilla Troelsø."
-  },
-  {
-    title: "Fry-Day",
-    date: "2025-08-08",
-    time: "16:30 until sold out",
-    location: "Flere Fugle",
-    category: "food",
-    description: "Fry-Day event at Flere Fugle."
-  },
-  {
-    title: "Orange Wine Tasting - deandrevin x Lunden",
-    date: "2025-08-08",
-    time: "19:00 to 21:00",
-    location: "Cafe Lunden",
-    category: "food",
-    description: "Orange wine tasting event."
-  },
-  {
-    title: "Moonlight Walk",
-    date: "2025-08-08",
-    time: "20:00",
-    location: "Meet at Nordvest St.",
-    category: "outdoors",
-    description: "Guided moonlight walk."
+    description: "Learn painting techniques with a local artist."
   }
 ];
 
-// Function to get ISO week number from a date string
-function getISOWeekNumber(dateString) {
+// Format date to "Weekday, DD Month YYYY"
+function formatDate(dateString) {
   const date = new Date(dateString);
-  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-  const dayNum = d.getUTCDay() || 7; // Sunday = 7
-  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+  const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
 }
 
-// Group events by week number
-const eventsByWeek = {};
+// Reference to DOM elements
+const eventList = document.getElementById('event-list');
+const filterButtons = document.querySelectorAll('#event-filters button');
 
-events.forEach(event => {
-  const weekNum = getISOWeekNumber(event.date);
-  if (!eventsByWeek[weekNum]) {
-    eventsByWeek[weekNum] = [];
+// Render events filtered by category
+function renderEvents(category = 'all') {
+  eventList.innerHTML = ''; // Clear current list
+
+  const filteredEvents = category === 'all' ? events : events.filter(e => e.category === category);
+
+  if (filteredEvents.length === 0) {
+    eventList.innerHTML = '<p>No events found for this category.</p>';
+    return;
   }
-  eventsByWeek[weekNum].push(event);
-});
 
-// Get container element where you want to render events
-const container = document.getElementById('your-events-container-id'); // Replace with your actual container id
-
-// Clear existing content in container
-container.innerHTML = '';
-
-// Get sorted list of week numbers
-const sortedWeeks = Object.keys(eventsByWeek).sort((a, b) => a - b);
-
-sortedWeeks.forEach(weekNum => {
-  // Create and append week title
-  const weekTitle = document.createElement('div');
-  weekTitle.className = 'week-title';
-  weekTitle.textContent = `Week ${weekNum}`;
-  container.appendChild(weekTitle);
-
-  // Create a div to hold events for this week
-  const weekGroup = document.createElement('div');
-  weekGroup.className = 'week-group';
-
-  // Add each event card for this week
-  eventsByWeek[weekNum].forEach(event => {
-    const eventCard = document.createElement('div');
+  filteredEvents.forEach(event => {
+    const eventCard = document.createElement('article');
     eventCard.className = 'event-card';
 
     eventCard.innerHTML = `
-      <h3>${event.title}</h3>
-      <div class="event-meta">${event.date} • ${event.time} • ${event.location}</div>
+      <h4>${event.title}</h4>
+      <p class="event-meta">${formatDate(event.date)} • ${event.time} • ${event.location}</p>
       <p>${event.description}</p>
     `;
 
-    weekGroup.appendChild(eventCard);
+    eventList.appendChild(eventCard);
   });
+}
 
-  container.appendChild(weekGroup);
+// Setup filter button click handlers
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active from all buttons
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    // Add active to clicked button
+    button.classList.add('active');
+
+    const category = button.getAttribute('data-category');
+    renderEvents(category);
+  });
 });
+
+// Initial render (all events)
+renderEvents();
