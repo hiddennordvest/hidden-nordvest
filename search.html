@@ -6,83 +6,220 @@
   <title>Search Results - Hidden Nordvest</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Paste your entire CSS here */
-    /* For brevity, I'm only including your styles for body, containers, headings, links, buttons, etc. */
-    /* ...your CSS from above goes here... */
-
-    /* Additional styles for search results */
-    .results-list {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
+    /* Your base CSS */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
     }
-
-    .results-list li {
-      padding: 1rem;
-      border-bottom: 1px solid #e3e8de;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f3f0;
+      color: #54684f;
+      margin: 0;
+      padding: 0 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      color: #54684f;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #54684f;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus-visible {
+      color: #374534;
+      text-decoration: underline;
+      outline: none;
+    }
+    button, input[type="submit"] {
+      background-color: #54684f;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 700;
       cursor: pointer;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.3s ease;
     }
-
-    .results-list li:hover,
-    .results-list li:focus {
-      background-color: #e3e8de;
+    button:hover,
+    button:focus-visible,
+    input[type="submit"]:hover,
+    input[type="submit"]:focus-visible {
+      background-color: #3f523a;
       outline: none;
     }
 
-    .results-list li a {
-      color: #54684f;
-      text-decoration: none;
-      font-weight: 600;
+    /* Container */
+    .page-container {
+      max-width: 900px;
+      margin: 2rem auto 4rem auto;
+      padding: 2rem 2.5rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      min-height: 60vh;
     }
 
+    /* Header for results */
+    .results-header {
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+      color: #374534;
+    }
+
+    /* Search form at top */
+    .search-form {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+    .search-form input[type="search"] {
+      flex-grow: 1;
+      padding: 0.5rem 0.8rem;
+      border: 2px solid #54684f;
+      border-radius: 6px;
+      font-size: 1rem;
+      color: #54684f;
+      background-color: #fafaf5;
+      transition: border-color 0.3s ease;
+    }
+    .search-form input[type="search"]:focus {
+      border-color: #374534;
+      outline: none;
+      background-color: #fff;
+    }
+    .search-form button {
+      background: #54684f;
+      border-radius: 6px;
+      border: none;
+      padding: 0.55rem 1rem;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+    .search-form button:hover,
+    .search-form button:focus-visible {
+      background-color: #3f523a;
+      outline: none;
+    }
+
+    /* Results list */
+    .results-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .results-list li {
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.2rem;
+      background-color: #f9fbee;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(85, 100, 72, 0.1);
+      transition: box-shadow 0.25s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+    .results-list li:hover,
+    .results-list li:focus {
+      box-shadow: 0 4px 16px rgba(55, 69, 52, 0.3);
+      transform: translateY(-3px);
+      outline: none;
+      background-color: #e8f0d9;
+    }
+    .results-list li a {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #374534;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .results-list li p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #54684f;
+      line-height: 1.4;
+    }
+
+    /* No results message */
     .no-results {
-      color: #a1ad9a;
       font-style: italic;
-      margin-top: 1rem;
+      color: #a1ad9a;
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .page-container {
+        padding: 1.5rem 1.2rem;
+      }
+      .search-form {
+        max-width: 100%;
+      }
+      .results-list li {
+        padding: 1rem 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="container" role="banner">
-    <div class="logo">Hidden Nordvest</div>
-    <nav class="main-nav" role="navigation" aria-label="Main Navigation">
-      <ul class="nav-list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about.html">About</a></li>
-        <!-- Add more nav links as needed -->
-      </ul>
-      <form class="search-form" role="search" aria-label="Site Search" onsubmit="return performSearch(event)">
-        <input type="search" name="q" id="search-input" placeholder="Search..." aria-label="Search site" />
-        <button type="submit" aria-label="Submit search">&#128269;</button>
-      </form>
-    </nav>
-  </header>
-
   <main class="page-container" role="main">
+    <form class="search-form" role="search" aria-label="Site Search" onsubmit="return performSearch(event)">
+      <input
+        type="search"
+        name="q"
+        id="search-input"
+        placeholder="Search Hidden Nordvest..."
+        aria-label="Search site"
+        autocomplete="off"
+      />
+      <button type="submit" aria-label="Submit search">&#128269;</button>
+    </form>
+
     <h1>Search Results</h1>
-    <p id="search-query-text"></p>
+    <p class="results-header" id="search-query-text"></p>
+
     <ul class="results-list" id="results-list" tabindex="0"></ul>
     <p class="no-results" id="no-results" style="display:none;">No results found.</p>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-container">
-      <div class="footer-links">
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/contact.html">Contact</a>
-      </div>
-      <p class="footer-note">&copy; 2025 Hidden Nordvest</p>
-    </div>
-  </footer>
-
   <script>
-    // Demo data: Replace with your real content or API
     const data = [
-      { title: "Nordvest Neighborhood Guide", url: "/nordvest-guide.html" },
-      { title: "Best Cafes in Hidden Nordvest", url: "/cafes.html" },
-      { title: "Upcoming Events in Nordvest", url: "/events.html" },
-      { title: "History of Nordvest", url: "/history.html" }
+      {
+        title: "Nordvest Neighborhood Guide",
+        url: "/nordvest-guide.html",
+        description: "Explore the sights, restaurants, and culture of Nordvest."
+      },
+      {
+        title: "Best Cafes in Hidden Nordvest",
+        url: "/cafes.html",
+        description: "Find your perfect coffee spot in Hidden Nordvest."
+      },
+      {
+        title: "Upcoming Events in Nordvest",
+        url: "/events.html",
+        description: "Don't miss out on the latest happenings in the area."
+      },
+      {
+        title: "History of Nordvest",
+        url: "/history.html",
+        description: "Learn about the rich history of the Nordvest neighborhood."
+      }
     ];
 
     function getQueryParam(param) {
@@ -93,7 +230,7 @@
     function performSearch(event) {
       event.preventDefault();
       const query = document.getElementById('search-input').value.trim();
-      if(query) {
+      if (query) {
         window.location.href = `search.html?q=${encodeURIComponent(query)}`;
       }
     }
@@ -105,17 +242,21 @@
 
       queryText.textContent = `You searched for: "${query}"`;
 
-      const filtered = data.filter(item => 
+      const filtered = data.filter(item =>
         item.title.toLowerCase().includes(query.toLowerCase())
       );
 
       resultsList.innerHTML = '';
 
-      if(filtered.length > 0) {
+      if (filtered.length > 0) {
         noResults.style.display = 'none';
         filtered.forEach(item => {
           const li = document.createElement('li');
-          li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
+          li.tabIndex = 0;
+          li.innerHTML = `
+            <a href="${item.url}">${item.title}</a>
+            <p>${item.description}</p>
+          `;
           resultsList.appendChild(li);
         });
       } else {
@@ -125,11 +266,11 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       const query = getQueryParam('q');
-      if(query) {
+      if (query) {
         displayResults(query);
         document.getElementById('search-input').value = query;
       } else {
-        document.getElementById('search-query-text').textContent = 'Please enter a search term.';
+        document.getElementById('search-query-text').textContent = 'Please enter a search term above.';
       }
     });
   </script>
