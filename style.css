@@ -1,13 +1,22 @@
-/* Import Poppins font from Google Fonts */
+/* Global box-sizing for consistent sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Import Poppins font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f0f3f0; /* light background to contrast with #54684f */
+  background-color: #f0f3f0;
   color: #54684f;
   margin: 0;
   padding: 0 1rem;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,9 +30,11 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
-  color: #374534; /* darker shade of your main color */
+a:hover,
+a:focus-visible {
+  color: #374534;
   text-decoration: underline;
+  outline: none;
 }
 
 button, input[type="submit"] {
@@ -37,15 +48,18 @@ button, input[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-button:hover, input[type="submit"]:hover {
-  background-color: #3f523a; /* darker shade for hover */
+button:hover,
+button:focus-visible,
+input[type="submit"]:hover,
+input[type="submit"]:focus-visible {
+  background-color: #3f523a;
+  outline: none;
 }
 
-/* Optional container for content */
 .container {
   max-width: 900px;
   margin: 2rem auto;
-  background-color: white;       /* white background */
+  background-color: white;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
@@ -54,7 +68,6 @@ button:hover, input[type="submit"]:hover {
   border-radius: 6px;
 }
 
-/* Logo container */
 .logo {
   font-weight: 700;
   font-size: 1.5rem;
@@ -62,7 +75,6 @@ button:hover, input[type="submit"]:hover {
   user-select: none;
 }
 
-/* Code blocks or preformatted text */
 pre, code {
   font-family: 'Courier New', Courier, monospace;
   background-color: #e3e8de;
@@ -72,7 +84,6 @@ pre, code {
 }
 
 .main-nav {
-  /* Remove background blue */
   background: transparent;
   padding: 0;
   display: flex;
@@ -80,7 +91,7 @@ pre, code {
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 1rem;
-  flex: 1; /* let nav take remaining space */
+  flex: 1;
 }
 
 .nav-list {
@@ -92,14 +103,14 @@ pre, code {
 }
 
 .nav-list a {
-  color: #54684f; /* primary green */
+  color: #54684f;
   text-decoration: none;
   font-weight: 600;
   padding: 0.5rem 0;
 }
 
 .nav-list a:hover,
-.nav-list a:focus {
+.nav-list a:focus-visible {
   text-decoration: underline;
   outline: none;
 }
@@ -134,12 +145,11 @@ pre, code {
 }
 
 .search-form button:hover,
-.search-form button:focus {
+.search-form button:focus-visible {
   color: #374534;
   outline: none;
 }
 
-/* Responsive: stack nav and search on smaller screens */
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
@@ -164,8 +174,8 @@ pre, code {
 
 .page-container {
   max-width: 900px;
-  margin: 2rem auto;    /* centers horizontally and adds vertical margin */
-  padding: 0 1rem;      /* horizontal padding */
-  background-color: white;  /* optional, if you want white bg */
-  border-radius: 6px;       /* optional, same as .container */
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background-color: white;
+  border-radius: 6px;
 }
