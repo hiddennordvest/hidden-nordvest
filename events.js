@@ -1,7 +1,7 @@
 // events.js
-const events = 
+const events = [
 
-  ({
+  {
   title: "6km heat run with 7daysactive and Rondo - Heat Harmony",
   date: "2025-08-01",
   time: "07:00",
@@ -548,5 +548,5 @@ const events =
   location: "Maker Space NV",
   category: "community",
   description: "Community gathering."
-},)
+},)]
 
