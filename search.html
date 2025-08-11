@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search Results - Hidden Nordvest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Paste your entire CSS here */
+    /* For brevity, I'm only including your styles for body, containers, headings, links, buttons, etc. */
+    /* ...your CSS from above goes here... */
+
+    /* Additional styles for search results */
+    .results-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .results-list li {
+      padding: 1rem;
+      border-bottom: 1px solid #e3e8de;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .results-list li:hover,
+    .results-list li:focus {
+      background-color: #e3e8de;
+      outline: none;
+    }
+
+    .results-list li a {
+      color: #54684f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .no-results {
+      color: #a1ad9a;
+      font-style: italic;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="container" role="banner">
+    <div class="logo">Hidden Nordvest</div>
+    <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+      <ul class="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <!-- Add more nav links as needed -->
+      </ul>
+      <form class="search-form" role="search" aria-label="Site Search" onsubmit="return performSearch(event)">
+        <input type="search" name="q" id="search-input" placeholder="Search..." aria-label="Search site" />
+        <button type="submit" aria-label="Submit search">&#128269;</button>
+      </form>
+    </nav>
+  </header>
+
+  <main class="page-container" role="main">
+    <h1>Search Results</h1>
+    <p id="search-query-text"></p>
+    <ul class="results-list" id="results-list" tabindex="0"></ul>
+    <p class="no-results" id="no-results" style="display:none;">No results found.</p>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <p class="footer-note">&copy; 2025 Hidden Nordvest</p>
+    </div>
+  </footer>
+
+  <script>
+    // Demo data: Replace with your real content or API
+    const data = [
+      { title: "Nordvest Neighborhood Guide", url: "/nordvest-guide.html" },
+      { title: "Best Cafes in Hidden Nordvest", url: "/cafes.html" },
+      { title: "Upcoming Events in Nordvest", url: "/events.html" },
+      { title: "History of Nordvest", url: "/history.html" }
+    ];
+
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+
+    function performSearch(event) {
+      event.preventDefault();
+      const query = document.getElementById('search-input').value.trim();
+      if(query) {
+        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+      }
+    }
+
+    function displayResults(query) {
+      const resultsList = document.getElementById('results-list');
+      const noResults = document.getElementById('no-results');
+      const queryText = document.getElementById('search-query-text');
+
+      queryText.textContent = `You searched for: "${query}"`;
+
+      const filtered = data.filter(item => 
+        item.title.toLowerCase().includes(query.toLowerCase())
+      );
+
+      resultsList.innerHTML = '';
+
+      if(filtered.length > 0) {
+        noResults.style.display = 'none';
+        filtered.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
+          resultsList.appendChild(li);
+        });
+      } else {
+        noResults.style.display = 'block';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const query = getQueryParam('q');
+      if(query) {
+        displayResults(query);
+        document.getElementById('search-input').value = query;
+      } else {
+        document.getElementById('search-query-text').textContent = 'Please enter a search term.';
+      }
+    });
+  </script>
+</body>
+</html>
