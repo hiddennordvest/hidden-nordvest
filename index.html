@@ -28,6 +28,7 @@
 
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="events-style.css" />
 </head>
 <body>
   <!-- HEADER -->
@@ -83,11 +84,20 @@
     <section id="events" class="events" aria-labelledby="events-heading">
       <div class="container">
         <h2 id="events-heading">📅 Nordvest Events — yoga, markets & pop-ups</h2>
-        <div class="calendar-wrap" role="region" aria-label="Nordvest events calendar">
-          <iframe src="https://calendar.google.com/calendar/embed?src=hidden.nordvest%40gmail.com&ctz=Europe%2FCopenhagen"
-                  style="border:0" width="100%" height="480" frameborder="0" scrolling="no" loading="lazy"
-                  title="Hidden Nordvest Google Calendar"></iframe>
+        
+        <!-- FILTER BUTTONS -->
+        <div id="event-filters" class="event-filters">
+          <button data-category="all" class="active">All</button>
+          <button data-category="music">🎶 Music</button>
+          <button data-category="arts">🎭 Arts</button>
+          <button data-category="markets">🛍 Markets</button>
+          <button data-category="food">🍺 Food & Drink</button>
+          <button data-category="wellness">🧘 Wellness</button>
+          <button data-category="workshop">🛠 Workshops</button>
         </div>
+
+        <!-- EVENT LIST -->
+        <div id="event-list" class="event-list"></div>
       </div>
     </section>
 
@@ -97,4 +107,14 @@
         <h2 id="map-heading">🗺 Explore Nordvest — cafés, bars & spots</h2>
         <p>Open the map to see curated places (cafés, restaurants, yoga, sauna and loppemarked locations).</p>
         <p>
-          <a class="btn" href="https://w
+          <a class="btn" href="https://w">View Map</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="events.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
