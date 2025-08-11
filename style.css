@@ -45,6 +45,21 @@ button:hover, input[type="submit"]:hover {
 .container {
   max-width: 900px;
   margin: 2rem auto;
+  background-color: white;       /* white background */
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 6px;
+}
+
+/* Logo container */
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #54684f;
+  user-select: none;
 }
 
 /* Code blocks or preformatted text */
@@ -57,13 +72,15 @@ pre, code {
 }
 
 .main-nav {
-  background: #3d5339; /* dark green */
-  padding: 0.5rem 1rem;
+  /* Remove background blue */
+  background: transparent;
+  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  font-family: Arial, sans-serif;
+  gap: 1rem;
+  flex: 1; /* let nav take remaining space */
 }
 
 .nav-list {
@@ -71,27 +88,14 @@ pre, code {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 0;
-  align-items: center;
-}
-
-.nav-list li {
-  margin: 0 0.5rem;
-  position: relative;
-}
-
-.nav-list li:not(:last-child)::after {
-  content: "|";
-  position: absolute;
-  right: -0.75rem;
-  color: white;
+  gap: 1.5rem;
 }
 
 .nav-list a {
-  color: white;
+  color: #54684f; /* primary green */
   text-decoration: none;
   font-weight: 600;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .nav-list a:hover,
@@ -108,35 +112,44 @@ pre, code {
 
 .search-form input[type="search"] {
   padding: 0.3rem 0.5rem;
-  border: none;
+  border: 1px solid #54684f;
   border-radius: 3px;
   font-size: 1rem;
   width: 180px;
+  color: #54684f;
+  background-color: #fff;
+}
+
+.search-form input[type="search"]::placeholder {
+  color: #a1ad9a;
 }
 
 .search-form button {
-  background: #3d5339;
-  border: 1px solid white;
-  color: white;
+  background: transparent;
+  border: none;
+  color: #54684f;
   font-size: 1.2rem;
   cursor: pointer;
   padding: 0 0.5rem;
-  border-radius: 3px;
 }
 
 .search-form button:hover,
 .search-form button:focus {
-  background: white;
-  color: #3d5339;
+  color: #374534;
   outline: none;
 }
 
 /* Responsive: stack nav and search on smaller screens */
 @media (max-width: 600px) {
-  .main-nav {
+  .container {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .main-nav {
+    justify-content: flex-start;
+    width: 100%;
   }
 
   .nav-list {
