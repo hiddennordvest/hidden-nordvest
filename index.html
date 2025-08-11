@@ -20,15 +20,23 @@
   <meta property="og:image" content="https://yourdomain.com/images/preview.jpg" />
   <meta property="og:url" content="https://yourgithubusername.github.io/hidden-nordvest/" />
 
-  <nav class="main-nav" role="navigation" aria-label="Primary Navigation">
+<nav class="main-nav" role="navigation" aria-label="Primary Navigation">
   <ul class="nav-list">
     <li><a href="#about">About</a></li>
     <li><a href="#instagram">Instagram</a></li>
-    <li><a href="#events">Events</a></li> <!-- Change to events.html if separate -->
+    <li><a href="#events">Events</a></li>
     <li><a href="#map">Map</a></li>
-    <li><a href="events.html">Events Page</a></li> <!-- link to your separate events page -->
+    <li><a href="events.html">Events Page</a></li>
   </ul>
+
+  <form class="search-form" role="search" action="/search" method="get" aria-label="Site search">
+    <input type="search" name="q" placeholder="Search..." aria-label="Search the website" />
+    <button type="submit" aria-label="Submit search">
+      🔍
+    </button>
+  </form>
 </nav>
+
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
