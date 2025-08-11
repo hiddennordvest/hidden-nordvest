@@ -17,14 +17,21 @@
 
 .event-filters button:hover,
 .event-filters button.active {
-  background: #333;
+  background: #007bff; /* accent blue */
   color: white;
+}
+
+.event-filters button:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
 }
 
 .event-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .week-group {
@@ -42,11 +49,12 @@
   background: white;
   border-radius: 8px;
   padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  /* box-shadow: 0 2px 6px rgba(0,0,0,0.05);  optional: disable shadow */
 }
 
 .event-card h3 {
-  margin: 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .event-meta {
@@ -58,4 +66,8 @@
   .event-filters {
     flex-direction: column;
   }
+  .event-card {
+    padding: 0.75rem;
+  }
 }
+
