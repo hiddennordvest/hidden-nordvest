@@ -1,5 +1,3 @@
-// events.js
-
 // Sample event data
 const events = [
   {
@@ -44,7 +42,7 @@ const events = [
 function formatDate(dateString) {
   const date = new Date(dateString);
   const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
-  return date.toLocaleDateString('en-US', options);
+  return date.toLocaleDateString('en-GB', options); // European style date format
 }
 
 // Reference to DOM elements
@@ -76,13 +74,18 @@ function renderEvents(category = 'all') {
   });
 }
 
-// Setup filter button click handlers
+// Setup filter button click handlers with accessibility updates
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
-    // Remove active from all buttons
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    // Add active to clicked button
+    // Remove active from all buttons and update aria-pressed
+    filterButtons.forEach(btn => {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-pressed', 'false');
+    });
+
+    // Add active to clicked button and update aria-pressed
     button.classList.add('active');
+    button.setAttribute('aria-pressed', 'true');
 
     const category = button.getAttribute('data-category');
     renderEvents(category);
