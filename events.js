@@ -1,4 +1,5 @@
 // events.js
+
 const events = [
   {
     title: "6km heat run with 7daysactive and Rondo - Heat Harmony",
@@ -337,3 +338,61 @@ const events = [
     description: "Guided moonlight walk."
   }
 ];
+
+// Function to get ISO week number from a date string
+function getISOWeekNumber(dateString) {
+  const date = new Date(dateString);
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNum = d.getUTCDay() || 7; // Sunday = 7
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+}
+
+// Group events by week number
+const eventsByWeek = {};
+
+events.forEach(event => {
+  const weekNum = getISOWeekNumber(event.date);
+  if (!eventsByWeek[weekNum]) {
+    eventsByWeek[weekNum] = [];
+  }
+  eventsByWeek[weekNum].push(event);
+});
+
+// Get container element where you want to render events
+const container = document.getElementById('your-events-container-id'); // Replace with your actual container id
+
+// Clear existing content in container
+container.innerHTML = '';
+
+// Get sorted list of week numbers
+const sortedWeeks = Object.keys(eventsByWeek).sort((a, b) => a - b);
+
+sortedWeeks.forEach(weekNum => {
+  // Create and append week title
+  const weekTitle = document.createElement('div');
+  weekTitle.className = 'week-title';
+  weekTitle.textContent = `Week ${weekNum}`;
+  container.appendChild(weekTitle);
+
+  // Create a div to hold events for this week
+  const weekGroup = document.createElement('div');
+  weekGroup.className = 'week-group';
+
+  // Add each event card for this week
+  eventsByWeek[weekNum].forEach(event => {
+    const eventCard = document.createElement('div');
+    eventCard.className = 'event-card';
+
+    eventCard.innerHTML = `
+      <h3>${event.title}</h3>
+      <div class="event-meta">${event.date} • ${event.time} • ${event.location}</div>
+      <p>${event.description}</p>
+    `;
+
+    weekGroup.appendChild(eventCard);
+  });
+
+  container.appendChild(weekGroup);
+});
