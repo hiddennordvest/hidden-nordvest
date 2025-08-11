@@ -179,3 +179,72 @@ pre, code {
   background-color: white;
   border-radius: 6px;
 }
+
+.site-footer {
+  background-color: #e3e8de; /* subtle light greenish background */
+  color: #374534; /* darker green text */
+  padding: 2rem 1rem 3rem; /* extra space at bottom */
+  font-size: 1rem;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  color: #54684f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: #374534;
+  outline: none;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.footer-note {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: #54684f;
+}
+
+/* Responsive: stack footer on small screens */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links {
+    order: 1;
+    margin-top: 0.5rem;
+  }
+
+  .footer-note {
+    order: 2;
+    margin-top: 1rem;
+  }
+}
