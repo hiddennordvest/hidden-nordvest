@@ -20,23 +20,6 @@
   <meta property="og:image" content="https://yourdomain.com/images/preview.jpg" />
   <meta property="og:url" content="https://yourgithubusername.github.io/hidden-nordvest/" />
 
-<nav class="main-nav" role="navigation" aria-label="Primary Navigation">
-  <ul class="nav-list">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="#map">Nordvest Map</a></li>
-    <li><a href="#instagram">Instagram</a></li>
-  </ul>
-
-  <form class="search-form" role="search" action="/search" method="get" aria-label="Site search">
-    <input type="search" name="q" placeholder="Search..." aria-label="Search the website" />
-    <button type="submit" aria-label="Submit search">🔍</button>
-  </form>
-</nav>
-
-
-
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hidden Nordvest – Cafés, Bars & Events in Copenhagen" />
@@ -48,18 +31,36 @@
   <link rel="stylesheet" href="events-style.css" />
 </head>
 <body>
-  <!-- HEADER -->
   <header class="site-header" role="banner">
-    <div class="hero" style="background-image: url('images/panorama.jpg');" aria-hidden="true">
-      <div class="hero-overlay">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Hidden Nordvest home">
         <img 
-          class="logo" 
           src="https://i.postimg.cc/xJhqth6C/logo.png" 
           alt="Hidden Nordvest logo" 
           width="120" 
           height="120" 
           loading="lazy" 
         />
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="#map">Nordvest Map</a></li>
+          <li><a href="#instagram">Instagram</a></li>
+        </ul>
+
+        <form class="search-form" role="search" action="/search" method="get" aria-label="Site search">
+          <input type="search" name="q" placeholder="Search..." aria-label="Search the website" />
+          <button type="submit" aria-label="Submit search">🔍</button>
+        </form>
+      </nav>
+    </div>
+
+    <div class="hero" style="background-image: url('images/panorama.jpg');" aria-hidden="true">
+      <div class="hero-overlay">
         <div class="hero-text">
           <h1>Hidden Nordvest</h1>
           <p class="tagline">Culture, cafés, events & hidden gems in Copenhagen’s Nordvest.</p>
@@ -74,7 +75,6 @@
       <div class="container">
         <h2 id="about-heading">Hidden Nordvest - Your local guide around the neighborhood</h2>
         <p>Nordvest is a vibrant, diverse district in Copenhagen, known for cozy <strong>cafés</strong>, experimental <strong>restaurants</strong>, lively <strong>bars</strong>, local <strong>yoga</strong> studios, relaxing <strong>saunas</strong>, and weekend <strong>second-hand markets (loppemarked)</strong>. 
-          
           This mini-guide highlights events, places and local tips to help you explore the neighborhood I call home for over 2 years by now.</p>
         
         <p>💌 A love letter to Nordvest’s best kept secrets.<br>
@@ -99,59 +99,58 @@
       </div>
     </section>
 
-<!-- EVENTS -->
-<section id="events" class="events" aria-labelledby="events-heading">
-  <div class="container">
-    <h2 id="events-heading">📅 Nordvest Events — yoga, markets & pop-ups</h2>
-    
-    <!-- FILTER BUTTONS -->
-    <div id="event-filters" class="event-filters" role="group" aria-label="Filter events by category">
-      <button data-category="all" class="active" aria-pressed="true">All</button>
-      <button data-category="music" aria-pressed="false">🎶 Music</button>
-      <button data-category="markets" aria-pressed="false">🛍 Markets</button>
-      <button data-category="wellness" aria-pressed="false">🧘 Wellness</button>
-      <button data-category="workshop" aria-pressed="false">🛠 Workshops</button>
-    </div>
+    <!-- EVENTS -->
+    <section id="events" class="events" aria-labelledby="events-heading">
+      <div class="container">
+        <h2 id="events-heading">📅 Nordvest Events — yoga, markets & pop-ups</h2>
+        
+        <!-- FILTER BUTTONS -->
+        <div id="event-filters" class="event-filters" role="group" aria-label="Filter events by category">
+          <button data-category="all" class="active" aria-pressed="true">All</button>
+          <button data-category="music" aria-pressed="false">🎶 Music</button>
+          <button data-category="markets" aria-pressed="false">🛍 Markets</button>
+          <button data-category="wellness" aria-pressed="false">🧘 Wellness</button>
+          <button data-category="workshop" aria-pressed="false">🛠 Workshops</button>
+        </div>
 
-    <!-- EVENT LIST -->
-    <div id="event-list" class="event-list" aria-live="polite" aria-relevant="additions"></div>
-  </div>
-</section>
+        <!-- EVENT LIST -->
+        <div id="event-list" class="event-list" aria-live="polite" aria-relevant="additions"></div>
+      </div>
+    </section>
 
+    <!-- MAP -->
+    <section id="map" class="map" aria-labelledby="map-heading">
+      <div class="container">
+        <h2 id="map-heading">🗺 Explore Nordvest — cafés, bars & spots</h2>
+        <p>Open the map to see curated places (cafés, restaurants, yoga, sauna and loppemarked locations).</p>
 
-<!-- MAP -->
-<section id="map" class="map" aria-labelledby="map-heading">
-  <div class="container">
-    <h2 id="map-heading">🗺 Explore Nordvest — cafés, bars & spots</h2>
-    <p>Open the map to see curated places (cafés, restaurants, yoga, sauna and loppemarked locations).</p>
+        <!-- Embedded map -->
+        <div class="map-embed" style="margin-bottom: 1rem;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22477.34985185139!2d12.5185803!3d55.702378!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQyJzA0LjciTiAxMsKwMzEnMzAuNSJF!5e0!3m2!1sen!2sdk!4v1691766344857!5m2!1sen!2sdk"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Google map showing Nordvest area in Copenhagen"
+          ></iframe>
+        </div>
 
-    <!-- Embedded map -->
-    <div class="map-embed" style="margin-bottom: 1rem;">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22477.34985185139!2d12.5185803!3d55.702378!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQyJzA0LjciTiAxMsKwMzEnMzAuNSJF!5e0!3m2!1sen!2sdk!4v1691766344857!5m2!1sen!2sdk"
-        width="100%"
-        height="400"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        aria-label="Google map showing Nordvest area in Copenhagen"
-      ></iframe>
-    </div>
-
-    <p>
-      <a
-        class="btn"
-        href="https://www.google.com/maps/@55.702378,12.5185803,14z/data=!3m1!4b1!4m2!6m1!1s1jd7DDp_ir8JfMMsd6fTAtBHX8W0aS4I?authuser=2&entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View Map in Google Maps
-      </a>
-    </p>
-  </div>
-</section>
-
+        <p>
+          <a
+            class="btn"
+            href="https://www.google.com/maps/@55.702378,12.5185803,14z/data=!3m1!4b1!4m2!6m1!1s1jd7DDp_ir8JfMMsd6fTAtBHX8W0aS4I?authuser=2&entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Map in Google Maps
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
 
   <!-- SCRIPTS -->
   <script src="events.js"></script>
