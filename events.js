@@ -1,96 +1,73 @@
-// Sample event data
-const events = [
-  {
-    id: 1,
-    title: "Morning Yoga",
-    date: "08-08-2025",
-    time: "08:00 - 09:00",
-    location: "Nordvest Studio",
-    category: "wellness",
-    description: "Start your day relaxed with a refreshing yoga session."
-  },
-  {
-    id: 2,
-    title: "Jazz Night",
-    date: "09-08-2025",
-    time: "20:00 - 23:00",
-    location: "Nordvest Jazz Bar",
-    category: "music",
-    description: "Live jazz music from local artists."
-  },
-  {
-    id: 3,
-    title: "Pop-up Market",
-    date: "2025-08-10",
-    time: "10:00 - 16:00",
-    location: "Nordvest Square",
-    category: "markets",
-    description: "Find unique handmade crafts and vintage items."
-  },
-  {
-    id: 4,
-    title: "Art Workshop",
-    date: "2025-08-11",
-    time: "14:00 - 17:00",
-    location: "Creative Hub",
-    category: "workshop",
-    description: "Learn painting techniques with a local artist."
-  }
-];
-
-// Format date to "Weekday, DD Month YYYY"
+// Format date as: Day Month Year (e.g., Friday 1 August 2025)
 function formatDate(dateString) {
-  const date = new Date(dateString);
-  const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
-  return date.toLocaleDateString('en-GB', options); // European style date format
+  const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+  return new Date(dateString).toLocaleDateString('en-GB', options);
 }
 
-// Reference to DOM elements
-const eventList = document.getElementById('event-list');
-const filterButtons = document.querySelectorAll('#event-filters button');
+// Convert time from 24h ("HH:mm") to 12h format with am/pm
+function formatTime(timeString) {
+  if (!timeString) return '';
+  const [hourStr, minute] = timeString.split(':');
+  let hour = parseInt(hourStr, 10);
+  const ampm = hour >= 12 ? 'pm' : 'am';
+  hour = hour % 12 || 12; // convert to 12-hour format, with 12 instead of 0
+  return `${hour}:${minute} ${ampm}`;
+}
 
-// Render events filtered by category
-function renderEvents(category = 'all') {
-  eventList.innerHTML = ''; // Clear current list
+function renderEvents(filterCategory = "all") {
+  const container = document.getElementById("event-list");
+  container.innerHTML = "";
 
-  const filteredEvents = category === 'all' ? events : events.filter(e => e.category === category);
+  const filteredEvents = filterCategory === "all"
+    ? events
+    : events.filter(event => event.category === filterCategory);
 
   if (filteredEvents.length === 0) {
-    eventList.innerHTML = '<p>No events found for this category.</p>';
+    container.innerHTML = '<p>No events found for this category.</p>';
     return;
   }
 
-  filteredEvents.forEach(event => {
-    const eventCard = document.createElement('article');
-    eventCard.className = 'event-card';
+  // Group events by date
+  const groupedByDate = filteredEvents.reduce((group, event) => {
+    (group[event.date] = group[event.date] || []).push(event);
+    return group;
+  }, {});
 
-    eventCard.innerHTML = `
-      <h4>${event.title}</h4>
-      <p class="event-meta">${formatDate(event.date)} • ${event.time} • ${event.location}</p>
-      <p>${event.description}</p>
-    `;
+  // Sort dates ascending
+  Object.keys(groupedByDate).sort().forEach(date => {
+    // Date heading
+    const dateHeading = document.createElement('h3');
+    dateHeading.textContent = formatDate(date);
+    container.appendChild(dateHeading);
 
-    eventList.appendChild(eventCard);
+    // Events under this date
+    groupedByDate[date].forEach(event => {
+      const card = document.createElement('article');
+      card.className = 'event-card';
+      card.innerHTML = `
+        <h4>${event.title}</h4>
+        <p class="event-meta">${formatTime(event.time)} • ${event.location}</p>
+        <p>${event.description}</p>
+      `;
+      container.appendChild(card);
+    });
   });
 }
 
-// Setup filter button click handlers with accessibility updates
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    // Remove active from all buttons and update aria-pressed
-    filterButtons.forEach(btn => {
-      btn.classList.remove('active');
-      btn.setAttribute('aria-pressed', 'false');
+document.addEventListener("DOMContentLoaded", () => {
+  renderEvents();
+
+  const buttons = document.querySelectorAll("#event-filters button");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      buttons.forEach(btn => {
+        btn.classList.remove("active");
+        btn.setAttribute("aria-pressed", "false");
+      });
+      button.classList.add("active");
+      button.setAttribute("aria-pressed", "true");
+
+      renderEvents(button.dataset.category);
     });
-
-    // Add active to clicked button and update aria-pressed
-    button.classList.add('active');
-    button.setAttribute('aria-pressed', 'true');
-
-    const category = button.getAttribute('data-category');
-    renderEvents(category);
   });
 });
-
-// Initial render (all events)
-renderEvents();
