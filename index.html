@@ -80,26 +80,27 @@
       </div>
     </section>
 
-    <!-- EVENTS -->
-    <section id="events" class="events" aria-labelledby="events-heading">
-      <div class="container">
-        <h2 id="events-heading">📅 Nordvest Events — yoga, markets & pop-ups</h2>
-        
-        <!-- FILTER BUTTONS -->
-        <div id="event-filters" class="event-filters">
-          <button data-category="all" class="active">All</button>
-          <button data-category="music">🎶 Music</button>
-          <button data-category="arts">🎭 Arts</button>
-          <button data-category="markets">🛍 Markets</button>
-          <button data-category="food">🍺 Food & Drink</button>
-          <button data-category="wellness">🧘 Wellness</button>
-          <button data-category="workshop">🛠 Workshops</button>
-        </div>
+<!-- EVENTS -->
+<section id="events" class="events" aria-labelledby="events-heading">
+  <div class="container">
+    <h2 id="events-heading">📅 Nordvest Events — yoga, markets & pop-ups</h2>
+    
+    <!-- FILTER BUTTONS -->
+    <div id="event-filters" class="event-filters" role="group" aria-label="Filter events by category">
+      <button data-category="all" class="active" aria-pressed="true">All</button>
+      <button data-category="music" aria-pressed="false">🎶 Music</button>
+      <button data-category="arts" aria-pressed="false">🎭 Arts & Crafts</button>
+      <button data-category="markets" aria-pressed="false">🛍 Markets</button>
+      <button data-category="food" aria-pressed="false">🍺 Food & Drinks</button>
+      <button data-category="wellness" aria-pressed="false">🧘 Wellness</button>
+      <button data-category="workshop" aria-pressed="false">🛠 Workshops</button>
+    </div>
 
-        <!-- EVENT LIST -->
-        <div id="event-list" class="event-list"></div>
-      </div>
-    </section>
+    <!-- EVENT LIST -->
+    <div id="event-list" class="event-list" aria-live="polite" aria-relevant="additions"></div>
+  </div>
+</section>
+
 
     <!-- MAP -->
     <section id="map" class="map" aria-labelledby="map-heading">
