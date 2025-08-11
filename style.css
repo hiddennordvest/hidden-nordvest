@@ -87,4 +87,11 @@ pre, code {
   text-decoration: underline;
   outline: none;
 }
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
+
 
