@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nordvest Events – Yoga, Markets & Pop-ups</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nordvest Events – Your Local Guide</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="events-style.css" />
 </head>
@@ -11,13 +11,15 @@
   <header class="site-header" role="banner">
     <a href="index.html" class="back-link">← Back to Home</a>
     <h1>Nordvest Events</h1>
+    <p>Your guide to yoga, markets, music, workshops, and more.</p>
   </header>
 
   <main id="content" role="main">
-    <section id="events" class="events" aria-labelledby="events-heading">
+    <section id="events" aria-labelledby="events-heading">
       <div class="container">
-        <h2 id="events-heading">📅 Nordvest Events — yoga, markets & pop-ups</h2>
+        <h2 id="events-heading">Upcoming Events</h2>
 
+        <!-- Filters -->
         <div id="event-filters" class="event-filters" role="group" aria-label="Filter events by category">
           <button data-category="all" class="active" aria-pressed="true">All</button>
           <button data-category="music" aria-pressed="false">🎶 Music</button>
@@ -28,12 +30,13 @@
           <button data-category="workshop" aria-pressed="false">🛠 Workshops</button>
         </div>
 
+        <!-- Event list will appear here -->
         <div id="event-list" class="event-list" aria-live="polite" aria-relevant="additions"></div>
       </div>
     </section>
   </main>
 
-  <script src="events-data.js"></script> <!-- Your event data file -->
-  <script src="events.js"></script>      <!-- Your event rendering & filter logic -->
+  <script src="events-data.js"></script>
+  <script src="events.js"></script>
 </body>
 </html>
