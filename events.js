@@ -3,7 +3,7 @@ const events = [
   {
     id: 1,
     title: "Morning Yoga",
-    date: "2025-08-08",
+    date: "08-08-2025",
     time: "08:00 - 09:00",
     location: "Nordvest Studio",
     category: "wellness",
@@ -12,7 +12,7 @@ const events = [
   {
     id: 2,
     title: "Jazz Night",
-    date: "2025-08-09",
+    date: "09-08-2025",
     time: "20:00 - 23:00",
     location: "Nordvest Jazz Bar",
     category: "music",
