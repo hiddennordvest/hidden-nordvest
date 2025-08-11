@@ -161,3 +161,11 @@ pre, code {
     width: 100%;
   }
 }
+
+.page-container {
+  max-width: 900px;
+  margin: 2rem auto;    /* centers horizontally and adds vertical margin */
+  padding: 0 1rem;      /* horizontal padding */
+  background-color: white;  /* optional, if you want white bg */
+  border-radius: 6px;       /* optional, same as .container */
+}
