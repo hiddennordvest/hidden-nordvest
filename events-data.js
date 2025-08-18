@@ -7,6 +7,7 @@ const events = [
     location: "Ebba Lunds Vej 41D",
     category: "Workshops",
     description: "Outdoor cooking club for community members."
+    titleColor: "#54684f"
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const events = [
     location: "@heatharmony",
     category: "Wellness",
     description: "Relax and reconnect with guided breathwork and sauna sessions."
+    titleColor: "#54684f"
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const events = [
     location: "@fiskerizakajaen",
     category: "Workshops",
     description: "Discover creative everyday wonders in a pop-up event."
+    titleColor: "#54684f"
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const events = [
     location: "@kapernaumskirken",
     category: "Workshops",
     description: "Kids’ linoleum printing workshop for creative fun."
+    titleColor: "#54684f"
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ const events = [
     location: "@art_hub_copenhagen",
     category: "Workshops",
     description: "Enjoy an art-focused lunch event with Anna Walther."
+    titleColor: "#54684f"
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ const events = [
     location: "Ebba Lunds Vej 41D",
     category: "Workshops",
     description: "Reading and literature activities surrounded by greenery."
+    titleColor: "#54684f"
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ const events = [
     location: "@autopoul",
     category: "Music",
     description: "Musical event celebrating Rose Tuesday vibes."
+    titleColor: "#54684f"
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ const events = [
     location: "@blaane",
     category: "Workshops",
     description: "Hands-on jewelry making session (DM for spot)."
+    titleColor: "#54684f"
   },
   {
     id: 9,
@@ -79,6 +87,7 @@ const events = [
     location: "@flerefugle",
     category: "Wellness",
     description: "Social evening with pizza and drinks."
+    titleColor: "#54684f"
   },
   {
     id: 10,
@@ -88,6 +97,7 @@ const events = [
     location: "@flok_kantine",
     category: "Wellness",
     description: "Community dinner gathering."
+    titleColor: "#54684f"
   },
   {
     id: 11,
@@ -97,6 +107,7 @@ const events = [
     location: "Nørrebroparken",
     category: "Workshops",
     description: "Outdoor theater and community dinner event."
+    titleColor: "#54684f"
   },
   {
     id: 12,
@@ -106,6 +117,7 @@ const events = [
     location: "@gammanv",
     category: "Wellness",
     description: "Test your knowledge in a fun trivia quiz."
+    titleColor: "#54684f"
   },
   {
     id: 13,
@@ -115,6 +127,7 @@ const events = [
     location: "@nordvest_olbar",
     category: "Wellness",
     description: "Evening pub quiz with friends."
+    titleColor: "#54684f"
   },
   {
     id: 14,
@@ -124,6 +137,7 @@ const events = [
     location: "@flok_kantine",
     category: "Workshops",
     description: "Baking buns and sourdough bread workshop."
+    titleColor: "#54684f"
   },
   {
     id: 15,
@@ -133,6 +147,7 @@ const events = [
     location: "@biblioteketrentemestervej",
     category: "Workshops",
     description: "Various literature and discussion sessions."
+    titleColor: "#54684f"
   },
   {
     id: 16,
@@ -142,6 +157,7 @@ const events = [
     location: "@lygtenskro",
     category: "Music",
     description: "Live concert performance."
+    titleColor: "#54684f"
   },
   {
     id: 17,
@@ -151,6 +167,7 @@ const events = [
     location: "@lundenkbh",
     category: "Wellness",
     description: "Quiz and themed dinner evening."
+    titleColor: "#54684f"
   },
   {
     id: 18,
@@ -160,6 +177,7 @@ const events = [
     location: "@thoravej29",
     category: "Workshops",
     description: "Cultural meeting and event series."
+    titleColor: "#54684f"
   },
   {
     id: 19,
@@ -169,6 +187,7 @@ const events = [
     location: "@poolpub_cph",
     category: "Wellness",
     description: "Enjoy discounted cocktails."
+    titleColor: "#54684f"
   },
   {
     id: 20,
@@ -178,6 +197,7 @@ const events = [
     location: "Parken i Bispeengen",
     category: "Workshops",
     description: "Art exhibition opening event."
+    titleColor: "#54684f"
   },
   {
     id: 21,
@@ -187,6 +207,7 @@ const events = [
     location: "@grundtvigskirke",
     category: "Workshops",
     description: "Craft and knitting café."
+    titleColor: "#54684f"
   },
   {
     id: 22,
@@ -196,6 +217,7 @@ const events = [
     location: "Bellahøj Amfiteater",
     category: "Music",
     description: "Summer day music and performances."
+    titleColor: "#54684f"
   },
   {
     id: 23,
@@ -205,6 +227,7 @@ const events = [
     location: "@flok_kantine",
     category: "Wellness",
     description: "Community dinner gathering."
+    titleColor: "#54684f"
   },
   {
     id: 24,
@@ -214,6 +237,7 @@ const events = [
     location: "Hulgårds Plads",
     category: "Workshops",
     description: "Outdoor theater and community dinner event."
+    titleColor: "#54684f"
   },
   {
     id: 25,
@@ -223,6 +247,7 @@ const events = [
     location: "@thoravej29",
     category: "Workshops",
     description: "Cultural meeting and community discussion."
+    titleColor: "#54684f"
   },
   {
     id: 26,
@@ -232,6 +257,7 @@ const events = [
     location: "@poolpub_cph",
     category: "Wellness",
     description: "Evening cocktails at discounted price."
+    titleColor: "#54684f"
   },
   {
     id: 27,
@@ -241,6 +267,7 @@ const events = [
     location: "Parken i Bispeengen",
     category: "Workshops",
     description: "Art exhibition opening."
+    titleColor: "#54684f"
   },
   {
     id: 28,
@@ -250,6 +277,7 @@ const events = [
     location: "@grundtvigskirke",
     category: "Workshops",
     description: "Knitting cafe and social gathering."
+    titleColor: "#54684f"
   },
   {
     id: 29,
@@ -259,6 +287,7 @@ const events = [
     location: "Bellahøj Amfiteater",
     category: "Wellness",
     description: "Summer day community event at the amphitheater."
+    titleColor: "#54684f"
   },
   {
     id: 30,
@@ -268,6 +297,7 @@ const events = [
     location: "@flok_kantine",
     category: "Wellness",
     description: "Community dinner event."
+    titleColor: "#54684f"
   },
   {
     id: 31,
@@ -277,6 +307,7 @@ const events = [
     location: "Hulgårds Plads",
     category: "Workshops",
     description: "Interactive theater and communal dining."
+    titleColor: "#54684f"
   },
   {
     id: 32,
@@ -286,6 +317,7 @@ const events = [
     location: "Bispebjerg Bakke 8",
     category: "Wellness",
     description: "Community long-table dinner event with local chefs."
+    titleColor: "#54684f"
   },
   {
     id: 33,
@@ -295,6 +327,7 @@ const events = [
     location: "@demokratigarage",
     category: "Workshops",
     description: "Plant care and service event."
+    titleColor: "#54684f"
   },
   {
     id: 34,
@@ -304,6 +337,7 @@ const events = [
     location: "@bodega.konkylie",
     category: "Music",
     description: "Music EP release party."
+    titleColor: "#54684f"
   },
   {
     id: 35,
@@ -313,6 +347,7 @@ const events = [
     location: "@grundtvigskirke",
     category: "Music",
     description: "Summer concert series at the church."
+    titleColor: "#54684f"
   },
   {
     id: 36,
@@ -322,6 +357,7 @@ const events = [
     location: "@urban13_cph",
     category: "Music",
     description: "Urban music session featuring FARMAND and Gaslight."
+    titleColor: "#54684f"
   },
   {
     id: 37,
@@ -331,6 +367,7 @@ const events = [
     location: "@lundenkbh",
     category: "Workshops",
     description: "Event focusing on women's economy with DJ Daarlig."
+    titleColor: "#54684f"
   },
 {
     id: 38,
@@ -340,6 +377,7 @@ const events = [
     location: "Heat Harmony",
     category: "wellness",
     description: "Start your morning with an energizing 6km heat run."
+  titleColor: "#54684f"
   },
   {
     id: 39,
@@ -349,6 +387,7 @@ const events = [
     location: "Thoravej 29",
     category: "workshops",
     description: "Participate in an engaging session with Haut."
+    titleColor: "#54684f"
   },
   {
     id: 40,
@@ -358,6 +397,7 @@ const events = [
     location: "Urban Camper Hostel",
     category: "wellness",
     description: "Enjoy tropical Piña Coladas and chill vibes."
+    titleColor: "#54684f"
   },
   {
     id: 41,
@@ -367,6 +407,7 @@ const events = [
     location: "Demokrati Garage",
     category: "markets",
     description: "Shop local produce and enjoy a Friday bar."
+    titleColor: "#54684f"
   },
   {
     id: 42,
@@ -376,6 +417,7 @@ const events = [
     location: "Flere Fugle",
     category: "wellness",
     description: "Indulge in delicious fried treats until sold out."
+    titleColor: "#54684f"
   },
   {
     id: 43,
@@ -385,6 +427,7 @@ const events = [
     location: "Fovl",
     category: "markets",
     description: "Experience a pop-up market with Andelsgaarde."
+    titleColor: "#54684f"
   },
   {
     id: 44,
@@ -394,6 +437,7 @@ const events = [
     location: "Galleri Nicolai Wallner",
     category: "workshops",
     description: "Attend the art exhibition opening."
+    titleColor: "#54684f"
   },
   {
     id: 45,
@@ -403,6 +447,7 @@ const events = [
     location: "Bellahøj Amfiteater",
     category: "wellness",
     description: "Enjoy a summer day event at Bellahøj Amfiteater."
+    titleColor: "#54684f"
   },
   {
     id: 46,
@@ -412,6 +457,7 @@ const events = [
     location: "Cafe Gazou",
     category: "music",
     description: "Have fun with Boyband Bingo night."
+    titleColor: "#54684f"
   },
   {
     id: 47,
@@ -421,6 +467,7 @@ const events = [
     location: "Cafe Lunden",
     category: "music",
     description: "Participate in MusikBingo and live performance by Agnes EA."
+    titleColor: "#54684f"
   },
 {
     id: 48,
@@ -430,6 +477,7 @@ const events = [
     location: "Goose CPH",
     category: "markets",
     description: "Get the exclusive Soy Sauce drop at Foo Ferments."
+  titleColor: "#54684f"
   },
   {
     id: 49,
@@ -439,6 +487,7 @@ const events = [
     location: "Dansekapellet",
     category: "wellness",
     description: "Join Yoga, Zumba, or K-pop sessions with instructors."
+    titleColor: "#54684f"
   },
   {
     id: 50,
@@ -448,6 +497,7 @@ const events = [
     location: "Just Sauna",
     category: "wellness",
     description: "Celebrate the sauna relaunch party with fun activities."
+    titleColor: "#54684f"
   },
   {
     id: 51,
@@ -457,6 +507,7 @@ const events = [
     location: "Gamma NV",
     category: "music",
     description: "Enjoy happy hours and a DJ set for great vibes."
+    titleColor: "#54684f"
   },
   {
     id: 52,
@@ -466,6 +517,7 @@ const events = [
     location: "Gamma Brewing",
     category: "music",
     description: "Attend the Gamma Wave Function 2025 event with live music."
+    titleColor: "#54684f"
   },
   {
     id: 53,
@@ -475,6 +527,7 @@ const events = [
     location: "Genforeningspladsen",
     category: "wellness",
     description: "Watch the Union vs. Viking/Rik match at Genforeningspladsen."
+    titleColor: "#54684f"
   },
   {
     id: 54,
@@ -484,6 +537,7 @@ const events = [
     location: "Fovl",
     category: "markets",
     description: "Visit the pop-up market with Andelsgaarde."
+    titleColor: "#54684f"
   },
   {
     id: 55,
@@ -493,6 +547,7 @@ const events = [
     location: "Bellahøj Amfiteater",
     category: "wellness",
     description: "Enjoy the summer day event at Bellahøj Amfiteater."
+    titleColor: "#54684f"
   },
   {
     id: 56,
@@ -502,6 +557,7 @@ const events = [
     location: "Dave's CPH",
     category: "music",
     description: "Party with DJ and enjoy fresh oysters."
+    titleColor: "#54684f"
   },
   {
     id: 57,
@@ -511,6 +567,7 @@ const events = [
     location: "Biblioteket Rentemestervej",
     category: "music",
     description: "Celebrate the Harry Eucrow release party."
+    titleColor: "#54684f"
   },
   {
     id: 58,
@@ -520,6 +577,7 @@ const events = [
     location: "Lunden KBH",
     category: "workshops",
     description: "Participate in a feminist and charity bingo event."
+    titleColor: "#54684f"
   }
 {
     id: 59,
@@ -529,6 +587,7 @@ const events = [
     location: "Goose CPH",
     category: "markets",
     description: "Get the exclusive Soy Sauce drop at Foo Ferments."
+  titleColor: "#54684f"
   },
   {
     id: 60,
@@ -538,6 +597,7 @@ const events = [
     location: "Autopoul",
     category: "wellness",
     description: "Start your day with morning yoga guided by Sarah Zoe."
+    titleColor: "#54684f"
   },
   {
     id: 61,
@@ -547,6 +607,7 @@ const events = [
     location: "Københavnstrup",
     category: "markets",
     description: "Explore the flea market at Københavnstrup."
+    titleColor: "#54684f"
   },
   {
     id: 62,
@@ -556,6 +617,7 @@ const events = [
     location: "Lunden KBH",
     category: "markets",
     description: "Check out the second-hand items and crafts at Minaskaffebar Lopper."
+    titleColor: "#54684f"
   },
   {
     id: 63,
@@ -565,6 +627,7 @@ const events = [
     location: "Makers Pavenv",
     category: "wellness",
     description: "Connect with neighbors and enjoy activities together."
+    titleColor: "#54684f"
   },
   {
     id: 64,
@@ -574,5 +637,6 @@ const events = [
     location: "Grundtvigskirken",
     category: "workshops",
     description: "Join a guided public tour at Grundtvigskirken."
+    titleColor: "#54684f"
   }
 ];
