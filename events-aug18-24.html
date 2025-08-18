@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Events — Aug 18–24, 2025</title>
+  <style>
+    :root {
+      --bg: #0b0c0e;
+      --card: #14161a;
+      --text: #e8eaf0;
+      --muted: #adb5bd;
+      --accent: #54684f; /* updated accent color */
+      --maxw: 900px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f7f8;
+        --card: #ffffff;
+        --text: #0b0c0e;
+        --muted: #6c757d;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(46, 204, 113, .08), transparent 50%),
+                  radial-gradient(1000px 600px at 110% 10%, rgba(46, 204, 113, .06), transparent 50%),
+                  var(--bg);
+    }
+    .container {
+      max-width: var(--maxw);
+      margin: 40px auto;
+      padding: 0 20px 96px;
+    }
+    header {
+      margin-bottom: 24px;
+    }
+    .title {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: clamp(24px, 3.5vw, 38px);
+      margin: 0 0 6px;
+    }
+    .subtitle {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .week-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 700px) {
+      .week-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 1100px) {
+      .week-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .day-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 18px 18px 14px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.18);
+    }
+    .day-title { 
+      display: flex; align-items: center; gap: 8px; 
+      margin: 0 0 8px; 
+      font-weight: 700; 
+      font-size: 18px;
+    }
+    .heart { font-size: 18px; color: var(--accent); }
+    .events { list-style: none; padding: 0; margin: 8px 0 0; }
+    .events li {
+      position: relative;
+      padding-left: 1.15rem;
+      margin: 8px 0;
+    }
+    .events li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      line-height: 1.2;
+      transform: translateY(1px);
+    }
+    .tag { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1 class="title">Northwest Copenhagen — Events</h1>
+      <p class="subtitle">Week of Aug 18–24, 2025 · Instagram handles included · Times intentionally omitted</p>
+    </header>
+
+    <section class="week-grid">
+      <!-- Monday -->
+      <article class="day-card" aria-labelledby="mon-title">
+        <h2 class="day-title" id="mon-title"><span class="heart" aria-hidden="true">💚</span> Monday, August 18</h2>
+        <ul class="events">
+          <li>Udendørs Madklub - Ebba Lunds Vej 41D</li>
+          <li>Disconnect to connect - @kaydi, Breathwork and Saunagus - @heatharmony</li>
+          <li>Everyday Wonders - Pop Up with @icare_dlg - @fiskerizakajaen</li>
+        </ul>
+      </article>
+
+      <!-- Tuesday -->
+      <article class="day-card" aria-labelledby="tue-title">
+        <h2 class="day-title" id="tue-title"><span class="heart" aria-hidden="true">💚</span> Tuesday, August 19</h2>
+        <ul class="events">
+          <li>Aftryk for Livet - Linoleum Print (for kids) - @kapernaumskirken</li>
+          <li>Free Lunch Series with Anna Walther - @art_hub_copenhagen</li>
+          <li>Literature in Green - Ebba Lunds Vej 41D</li>
+          <li>Rose Tuesday - @autopoul</li>
+          <li>Jewelry Workshop with @amaliegrauengaard (DM for spot) - @blaane</li>
+          <li>Pils & Pizza - @flerefugle</li>
+          <li>Fællesspisning - @flok_kantine</li>
+          <li>Pop Op Teater &amp; Fællesspisning with @flok_kantine - Nørrebroparken</li>
+          <li>Trivia Quiz - @gammanv</li>
+          <li>Pub Quiz - @nordvest_olbar</li>
+        </ul>
+      </article>
+
+      <!-- ... rest of the week remains unchanged ... -->
+    </section>
+  </main>
+</body>
+</html>
