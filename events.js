@@ -10,7 +10,7 @@ function formatTime(timeString) {
   const [hourStr, minute] = timeString.split(':');
   let hour = parseInt(hourStr, 10);
   const ampm = hour >= 12 ? 'pm' : 'am';
-  hour = hour % 12 || 12; // convert to 12-hour format, with 12 instead of 0
+  hour = hour % 12 || 12;
   return `${hour}:${minute} ${ampm}`;
 }
 
@@ -27,7 +27,7 @@ function renderEvents(filterCategory = "all") {
     return;
   }
 
-  // Group events by date
+  // Group by date
   const groupedByDate = filteredEvents.reduce((group, event) => {
     (group[event.date] = group[event.date] || []).push(event);
     return group;
@@ -35,17 +35,15 @@ function renderEvents(filterCategory = "all") {
 
   // Sort dates ascending
   Object.keys(groupedByDate).sort().forEach(date => {
-    // Date heading
     const dateHeading = document.createElement('h3');
     dateHeading.textContent = formatDate(date);
     container.appendChild(dateHeading);
 
-    // Events under this date
     groupedByDate[date].forEach(event => {
       const card = document.createElement('article');
       card.className = 'event-card';
       card.innerHTML = `
-        <h4>${event.title}</h4>
+        <h4 class="event-title">${event.title}</h4>
         <p class="event-meta">${formatTime(event.time)} • ${event.location}</p>
         <p>${event.description}</p>
       `;
